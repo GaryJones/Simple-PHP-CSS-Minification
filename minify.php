@@ -20,8 +20,8 @@ function minify( $css ) {
 	// Remove ; before }
 	$css = preg_replace( '/;(?=\s*})/', '', $css );
 
-	// Remove space after , : ; { } */
-	$css = preg_replace( '/(,|:|;|\{|}|\*\/) /', '$1', $css );
+	// Remove space after , : ; { } */ >
+	$css = preg_replace( '/(,|:|;|\{|}|\*\/|>) /', '$1', $css );
 
 	// Remove space before , ; { } ( ) >
 	$css = preg_replace( '/ (,|;|\{|}|\(|\)|>)/', '$1', $css );
