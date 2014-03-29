@@ -16,6 +16,9 @@ function minify( $css ) {
 	// Remove comment blocks, everything between /* and */, unless
 	// preserved with /*! ... */
 	$css = preg_replace( '/\/\*[^\!](.*?)\*\//', '', $css );
+	
+	// Remove ; before }
+	$css = preg_replace( '/;(?=\s*})/', '', $css );
 
 	// Remove space after , : ; { }
 	$css = preg_replace( '/(,|:|;|\{|}) /', '$1', $css );
