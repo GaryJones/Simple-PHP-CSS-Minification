@@ -15,7 +15,7 @@ function minify( $css ) {
 
 	// Remove comment blocks, everything between /* and */, unless
 	// preserved with /*! ... */
-	$css = preg_replace( '\/\*([^\*\!]|[\r\n]|(\*+([^\/]|[\r\n])))*\*\/', '', $css );
+	$css = preg_replace( '/\/\*[^\!]([^\*]|[\s]|(\*([^\/]|[\s])))*\*\//', '', $css );
 	
 	// Remove ; before }
 	$css = preg_replace( '/;(?=\s*})/', '', $css );
