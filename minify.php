@@ -12,11 +12,14 @@ function minify( $css ) {
 
 	// Normalize whitespace
 	$css = preg_replace( '/\s+/', ' ', $css );
+	
+	// Remove spaces before and after comment
+	$css = preg_replace( '/(\s+)(\/\*(.*?)\*\/)(\s+)/', '$2', $css );
 
 	// Remove comment blocks, everything between /* and */, unless
-	// preserved with /*! ... */
-	$css = preg_replace( '/\/\*([^\!]|\s([^\*]|\s|(\*([^\/]|\s))))*\*\//', '', $css );
-	
+	// preserved with /*! ... */ or /** ... */
+	$css = preg_replace( '~/\*(?!\!)(.*?)\*/~', '', $css );
+
 	// Remove ; before }
 	$css = preg_replace( '/;(?=\s*})/', '', $css );
 
