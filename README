@@ -1,0 +1,3 @@
+Quick and dirty PHP function to minify common parts of CSS.
+
+May not support some of the more complex syntaxes of CSS3. For that, use a proper parser and minifier.
