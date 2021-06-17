@@ -1,3 +1,7 @@
 Quick and dirty PHP function to minify common parts of CSS.
 
-May not support some of the more complex syntaxes of CSS3. For that, use a proper parser and minifier.
+This code is old; it worked at the time but may not support some of the more complex syntaxes of CSS3. For that, use a proper parser and minifier.
+
+As per the [LICENSE], this code is in the public domain, and can be used/amended as you wish, without attribution.
+
+There is no intent to improve the code in the future.
